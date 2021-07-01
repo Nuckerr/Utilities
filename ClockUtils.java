@@ -11,8 +11,6 @@ import org.bukkit.util.Consumer;
  */
 public class ClockUtils {
 
-    private static Plugin plugin = SpigotUtilities.getPlugin(SpigotUtilities.class);
-
     /**
      * A method to convert ticks to seconds
      * @param ticks the amount of ticks you want to convert
