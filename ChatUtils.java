@@ -36,6 +36,7 @@ public class ChatUtils {
      * @return the translated string
      */
     public static String translate(String string) {
+        if(string == null) return null;
         return ChatColor.translateAlternateColorCodes('&', string);
     }
 
@@ -48,12 +49,29 @@ public class ChatUtils {
      */
     public static List<String> translate(List<String> lines) {
         List<String> strings = new ArrayList<>();
+        if(lines == null) return null;
 
         for (String line : lines) {
             strings.add(ChatColor.translateAlternateColorCodes('&', line));
         }
 
         return strings;
+    }
+    
+    /**
+     * A shorter method for the bukkit method ChatColor#translateAlternateColorCodes.
+     * Dosent require a altColorChar param, this is provided in the method as '&'
+     * This methods supports string arrays
+     * @param lines the list of strings you want to translate
+     * @return each string in your list being translated
+     */
+    public static String[] translate(String[] lines) {
+        List<String> res = new ArrayList<>();
+        if(lines == null) return null;
+        for(String line : lines) {
+            res.add(ChatUtils.translate(line);
+        }
+        return res.toArray(new String[res.size()]);
     }
 
     /**
