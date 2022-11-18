@@ -10,7 +10,9 @@ import org.bukkit.util.Consumer;
  * @see java.util.concurrent.TimeUnit This TimeUnit class for more usful time converstion
  */
 public class ClockUtils {
-
+    
+    private static JavaPlugin plugin = JavaPlugin.getProvidingPlugin(getClass());
+    
     /**
      * A method to convert ticks to seconds
      * @param ticks the amount of ticks you want to convert
@@ -52,7 +54,7 @@ public class ClockUtils {
                 i--;
                 countingRunnable.setAmount(i);
             }
-        }.runTaskTimer(/* Your plugin here */  Bukkit.getServer().getPluginManager().getPlugin("YourPlugin"), 0L, 20L);
+        }.runTaskTimer(ClockUtils.plugin, 0L, 20L);
     }
 
     /**
@@ -78,7 +80,7 @@ public class ClockUtils {
                 i++;
                 countingRunnable.setAmount(i);
             }
-        }.runTaskTimer(/* Your plugin here */  Bukkit.getServer().getPluginManager().getPlugin("YourPlugin"), 0L, 20L);
+        }.runTaskTimer(ClockUtils.plugin, 0L, 20L);
     }
 
     /**
@@ -113,7 +115,7 @@ public class ClockUtils {
             }
         };
 
-         runnable.runTaskTimer(/* Your plugin here */  Bukkit.getServer().getPluginManager().getPlugin("YourPlugin"), 0L, 20L);
+         runnable.runTaskTimer(ClockUtils.plugin, 0L, 20L);
          return runnable;
     }
 

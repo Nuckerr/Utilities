@@ -3,13 +3,6 @@ A bunch of useful utilities, fully documented (in javadocs), for you to use in y
 
 To understand the meaning of each method/variable and how to use it, either read through the javadocs in the file or IntelliSense
 
-# IMPORTANT
-If you plan to use the `ClockUtils.java` class, go through and everwhere it says the following, replace it with an instance of your main class:
-
-```
-/* Your plugin here */  Bukkit.getServer().getPluginManager().getPlugin("YourPlugin")
-```
-
 # Contributing
 Guidelines:
   - Use `this` keyword when possible
