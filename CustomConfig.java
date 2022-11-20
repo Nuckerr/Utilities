@@ -15,7 +15,7 @@ import java.io.IOException;
 public class CustomConfig {
     private final File file;
     private final YamlConfiguration yaml;
-    private final Plugin plugin = /* Put your plugin here */ Bukkit.getPluginManager().getPlugin("YourPlugin");
+    private static JavaPlugin plugin = JavaPlugin.getProvidingPlugin(getClass());
 
     /**
      * The constructor. Pass your params and the file is created and initiated.
